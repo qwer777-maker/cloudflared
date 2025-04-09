@@ -1,0 +1,15 @@
+# 隧道的 UUID, 就是登录凭证的json文件名称
+tunnel: dd
+# 鉴权文件的全路径，注意替换为自己的
+credentials-file: U:\Users\Enlink\.cloudflared\dd.json
+protocol: quic
+originRequest:
+noTLSVerify: true
+ingress:
+  # 你的freenom二级域名
+  - hostname: www.dd.net
+    service: http://localhost:32443
+  # 默认错误404
+  - service: http_status:404
+
+
